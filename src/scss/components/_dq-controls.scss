@@ -1,8 +1,8 @@
 .dq-controls {
   display: grid;
   place-items: start center;
-  place-content: start center;
   gap: 21px;
+  width: 370px;
   height: 700px;
   padding: 36px;
   font-family: $font-default;
@@ -14,8 +14,14 @@
   text-transform: uppercase;
   background-color: $color-phantom-white;
   border-radius: 16px;
+  place-content: start center;
 }
 .dq-controls__btns {
   display: grid;
   gap: 21px;
+}
+.dq-controls__labels {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
 }

@@ -1,0 +1,35 @@
+.dq-label-status {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: max-content;
+  padding: 5px 12px;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  text-align: center;
+  color: $color-signal-blue;
+  white-space: nowrap;
+  text-transform: uppercase;
+  background-color: $color-lavender;
+  border-radius: 30px;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+  &.purpure {
+    color: $color-moderate-slate-blue;
+    background-color: transparentize($color-moderate-slate-blue, 0.9);
+  }
+  &.yellow {
+    color: $color-narcissus-yellow;
+    background-color: transparentize($color-amber, 0.9);
+  }
+  &.red {
+    color: $color-deep-purple-pink;
+    background-color: transparentize($color-wild-watermelon, 0.9);
+  }
+}

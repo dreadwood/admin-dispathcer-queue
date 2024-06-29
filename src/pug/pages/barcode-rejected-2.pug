@@ -8,10 +8,11 @@ include /components/dq-status
 include /components/dq-controls
 include /components/dq-photos
 include /components/label/dq-label
+include /components/label/dq-label-contact
 
 
 block data
-  - title = "Rx2Go: Dispathcer queue — Confirm photo"
+  - title = "Rx2Go: Dispathcer queue — Barcode rejected"
 
 block content
   .dq-page__status-bar
@@ -26,9 +27,7 @@ block content
         .dq-page__status
           +dq-status({})
       .dq-page__contact
-        span Antidio Lopez
-        span 17 Lincoln ave, Roslyn Heights, NY, 11577
-        span Pharmacy Name
+        +dq-label-contact({})
       .dq-page__grid
         .dq-page__img
           img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")

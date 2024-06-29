@@ -42,33 +42,11 @@
   margin-left: auto;
 }
 .dq-page__contact {
-  width: max-content;
   margin-bottom: 16px;
-  padding: 6px 12px;
-  font-size: 18px;
-  line-height: 22px;
-  color: $color-signal-blue;
-  background-color: $color-phantom-white;
-  border-radius: 46px;
-  & > *:not(:first-child) {
-    position: relative;
-    padding-left: 20px;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      display: block;
-      width: 1px;
-      height: 14px;
-      background-color: transparentize($color-signal-blue, 0.6);
-      transform: translateY(-50%);
-    }
-  }
 }
 .dq-page__grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, min-content);
   gap: 16px;
 }
 .dq-page__img {

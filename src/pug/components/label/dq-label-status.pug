@@ -1,0 +1,6 @@
+include /elements/images
+
+mixin dq-label-status({ icon, text, color })
+  .dq-label-status(class=color)
+    +svg({ name: icon, width: 16, height: 16 })
+    =text

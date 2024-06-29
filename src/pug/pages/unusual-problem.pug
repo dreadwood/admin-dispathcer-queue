@@ -7,32 +7,28 @@ include /components/dq-info
 include /components/dq-status
 include /components/dq-controls
 include /components/dq-photos
-include /components/label/dq-label
 include /components/label/dq-label-contact
 
 
 block data
-  - title = "Rx2Go: Dispathcer queue — Barcode rejected"
+  - title = "Rx2Go: Dispathcer queue — An unusual problem"
 
 block content
   .dq-page__status-bar
     +dq-status-bar({})
   .dq-page__content
     .dq-page__left
-      +dq-info({})
+      +dq-info({ isSmall: true })
     .dq-page__right
       .dq-page__title-wrp
-        .dq-title Barcode rejected
-        +dq-label({ text: "2 ITEM", color: "darkblue" })
+        .dq-title An unusual problem
         .dq-page__status
           +dq-status({})
       .dq-page__contact
         +dq-label-contact({})
       .dq-page__grid
-        .dq-page__img
-          img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
         .dq-page__controls
-          +dq-controls({ type: 4 })
+          +dq-controls({ type: 5 })
         +dq-chat({})
         .dq-page__photos
           +dq-photos({})
