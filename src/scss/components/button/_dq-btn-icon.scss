@@ -35,6 +35,13 @@
     color: $color-white;
     background-color: $color-cornflower-blue;
   }
+  &.blackblue {
+    color: $color-white;
+    background-color: $color-signal-blue;
+    &:not([disabled]):hover {
+      background-color: color.adjust($color-signal-blue, $lightness: 10%);
+    }
+  }
   &.gray {
     color: $color-signal-blue;
     background-color: $color-phantom-white;

@@ -6,6 +6,7 @@ include /components/dq-chat
 include /components/dq-info
 include /components/dq-status
 include /components/dq-controls
+include /components/dq-view
 
 
 block data
@@ -23,8 +24,7 @@ block content
         .dq-page__status
           +dq-status({})
       .dq-page__grid
-        .dq-page__img
-          img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
+        +dq-view({})
         .dq-page__controls
           +dq-controls({})
         +dq-chat({})

@@ -9,6 +9,7 @@ include /components/dq-controls
 include /components/dq-photos
 include /components/label/dq-label
 include /components/label/dq-label-contact
+include /components/dq-view
 
 
 block data
@@ -29,8 +30,7 @@ block content
       .dq-page__contact
         +dq-label-contact({})
       .dq-page__grid
-        .dq-page__img
-          img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
+        +dq-view({})
         .dq-page__controls
           +dq-controls({ type: 4 })
         +dq-chat({})

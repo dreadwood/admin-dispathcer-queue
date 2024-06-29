@@ -1,0 +1,12 @@
+mixin dq-view({ type })
+  .dq-view
+    if (type === 1 || !type)
+      .dq-view__img
+        img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
+    if type === 2
+      .dq-view__img
+        img(src="/img/placeholder-build.jpg" width="525" height="700" alt="")
+      .dq-view__controls
+        each it in (new Array(3).fill({}))
+          button.dq-view__preview
+            img(src="/img/preview-build.jpg" width="62" height="84" alt="")

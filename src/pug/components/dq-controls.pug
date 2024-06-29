@@ -9,14 +9,12 @@ mixin dq-controls({ type })
     .dq-controls
       +dq-label({ text: "00:46", color: "blue" })
       .dq-controls__text Does the photo match?
-      //- .dq-controls__btns
       +dq-btn-big({ text: "YES", type: "accept" })
       +dq-btn-big({ text: "NO", type: "reject" })
   if type === 2
     .dq-controls
       +dq-label({ text: "00:46", color: "blue" })
       .dq-controls__text Barcode rejected?
-      //- .dq-controls__btns
       +dq-dialog({})
       +dq-btn-big({ text: "YES, ALLOW WITHOUT SCANNING", type: "accept", isDisabled: true })
       +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject", isDisabled: true })
@@ -24,24 +22,29 @@ mixin dq-controls({ type })
     .dq-controls
       +dq-label({ text: "00:46", color: "blue" })
       .dq-controls__text Barcode rejected?
-      //- .dq-controls__btns
       +dq-dialog-input({ iputText: "yes" })
       +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject" })
   if type === 4
     .dq-controls
       +dq-label({ text: "00:46", color: "blue" })
       .dq-controls__text Barcode rejected?
-      //- .dq-controls__btns
       +dq-dialog-input({ isError: true, iputText: "yep" })
       +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject" })
   if type === 5
     .dq-controls
       +dq-label({ text: "00:46", color: "blue" })
       .dq-controls__text Has the problem been solved?
-      //- .dq-controls__btns
       +dq-btn-big({ text: "YES", type: "accept" })
       +dq-btn-big({ text: "NO", type: "reject" })
       .dq-controls__labels
         +dq-label-status({ text: "Allow not present", icon: "icon-label-ban", color: "red" })
         +dq-label-status({ text: "Allow wrong address", icon: "icon-label-house", color: "yellow" })
         +dq-label-status({ text: "Allow without copay", icon: "icon-label-wallet", color: "purpure" })
+  if type === 6
+    .dq-controls
+      +dq-label({ text: "02:16", color: "yellow" })
+      .dq-controls__text Is the driver in the correct location?
+      +dq-btn-big({ text: "YES, THE DRIVER IS AT THE CORRECT LOCATION", type: "accept" })
+      +dq-btn-big({ text: "NO, THE DRIVER'S ELSEWHERE", type: "reject" })
+      .dq-controls__labels
+        +dq-label-status({ text: "Allow not present", icon: "icon-check", color: "blue" })

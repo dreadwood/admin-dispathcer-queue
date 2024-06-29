@@ -7,6 +7,7 @@ include /components/dq-info
 include /components/dq-status
 include /components/dq-controls
 include /components/dq-photos
+include /components/dq-view
 
 
 block data
@@ -25,13 +26,17 @@ block content
           +dq-status({})
       .dq-page__grid.map
         .dq-page__map
-        .dq-page__img
-          img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
+          img(src="/img/map-location.jpg" width="525" height="700" alt="")
+          .dq-page__map-legend
+            +dq-legend({})
+          .dq-page__map-btn
+            +dq-btn-icon({ text: "Google Street View", icon: "icon-label-visible", color: "blackblue" })
+        +dq-view({ type: 2 })
         .dq-page__controls
-          +dq-controls({})
-        +dq-chat({})
+          +dq-controls({ type: 6 })
+        +dq-chat({ isPredictive: true, isDriverMsg: true })
         .dq-page__photos
-          +dq-photos({})
+          +dq-photos({ type: 2 })
   .dq-page__queue
     +dq-queue-section({})
 

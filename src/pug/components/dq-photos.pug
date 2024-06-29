@@ -1,15 +1,26 @@
-mixin dq-photos({})
+mixin dq-photos({ type })
   -
-    const photosList = [
+    const photosList1 = [
       { name: "Building", photo: "/img/preview-1.jpg"},
       { name: "Door 1", photo: "/img/preview-2.jpg"},
       { name: "Door 2", photo: "/img/preview-3.jpg"},
       { name: "Package", photo: "/img/preview-4.jpg"},
     ]
-  .dq-photos
-    .dq-photos__title Previous orders photos
-    .dq-photos__list
-      each it in photosList
-        button.dq-photos__item
-          img(src=it.photo width="130" height="170" alt="")
-          =it.name
+    const photosList2 = [
+      { photo: "/img/preview-build.jpg"},
+      { photo: "/img/preview-build.jpg"},
+    ]
+  .dq-photos(class=(type === 2 && "big"))
+    if (type === 1 || !type)
+      .dq-photos__title Previous orders photos
+      .dq-photos__list
+        each it in photosList1
+          button.dq-photos__item
+            img(src=it.photo width="130" height="170" alt="")
+            .dq-photos__text=it.name
+    if type === 2
+      .dq-photos__title Previous driver’s photos
+      .dq-photos__list
+        each it in photosList2
+          button.dq-photos__item
+            img(src=it.photo width="130" height="170" alt="")

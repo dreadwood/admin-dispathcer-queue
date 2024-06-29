@@ -12,13 +12,17 @@
   color: $color-signal-blue;
   white-space: nowrap;
   text-transform: uppercase;
-  background-color: $color-lavender;
+  background-color: $color-periwinkle-2;
   border-radius: 30px;
   svg {
     flex-shrink: 0;
     width: 16px;
     height: 16px;
     fill: currentcolor;
+  }
+  &.blue {
+    color: $color-signal-blue;
+    background-color: $color-periwinkle-2;
   }
   &.purpure {
     color: $color-moderate-slate-blue;
