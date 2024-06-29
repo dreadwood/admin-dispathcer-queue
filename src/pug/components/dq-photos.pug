@@ -1,0 +1,15 @@
+mixin dq-photos({})
+  -
+    const photosList = [
+      { name: "Building", photo: "/img/preview-1.jpg"},
+      { name: "Door 1", photo: "/img/preview-2.jpg"},
+      { name: "Door 2", photo: "/img/preview-3.jpg"},
+      { name: "Package", photo: "/img/preview-4.jpg"},
+    ]
+  .dq-photos
+    .dq-photos__title Previous orders photos
+    .dq-photos__list
+      each it in photosList
+        button.dq-photos__item
+          img(src=it.photo width="130" height="170" alt="")
+          =it.name

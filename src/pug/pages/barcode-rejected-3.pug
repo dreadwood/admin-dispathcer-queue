@@ -1,0 +1,42 @@
+extends /elements/layout-page
+include /elements/images
+include /components/dq-status-bar
+include /components/dq-queue-section
+include /components/dq-chat
+include /components/dq-info
+include /components/dq-status
+include /components/dq-controls
+include /components/dq-photos
+include /components/label/dq-label
+
+
+block data
+  - title = "Rx2Go: Dispathcer queue — Confirm photo"
+
+block content
+  .dq-page__status-bar
+    +dq-status-bar({})
+  .dq-page__content
+    .dq-page__left
+      +dq-info({})
+    .dq-page__right
+      .dq-page__title-wrp
+        .dq-title Barcode rejected
+        +dq-label({ text: "2 ITEM", color: "darkblue" })
+        .dq-page__status
+          +dq-status({})
+      .dq-page__contact
+        span Antidio Lopez
+        span 17 Lincoln ave, Roslyn Heights, NY, 11577
+        span Pharmacy Name
+      .dq-page__grid
+        .dq-page__img
+          img(src="/img/placeholder-bag.jpg" width="525" height="700" alt="")
+        .dq-page__controls
+          +dq-controls({ type: 4 })
+        +dq-chat({})
+        .dq-page__photos
+          +dq-photos({})
+  .dq-page__queue
+    +dq-queue-section({})
+

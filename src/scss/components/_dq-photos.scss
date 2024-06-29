@@ -1,0 +1,45 @@
+.dq-photos {
+  padding: 16px;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  text-align: left;
+  color: $color-signal-blue;
+  background-color: $color-phantom-white;
+  border-radius: 16px;
+}
+.dq-photos__title {
+  margin-bottom: 6px;
+}
+.dq-photos__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.dq-photos__item {
+  display: block;
+  width: 130px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: transparentize($color-signal-blue, 0.6);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  img {
+    @include transition(scale);
+    display: block;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+  }
+  &:hover,
+  &:focus {
+    img {
+      scale: 1.05;
+    }
+  }
+}

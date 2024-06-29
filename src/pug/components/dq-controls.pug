@@ -1,13 +1,35 @@
-mixin dq-label({ text, color })
-  .dq-label(class=color)=text
+include /components/label/dq-label
+include /components/button/dq-btn-big
+include /components/dq-dialog
+include /components/dq-dialog-input
 
-mixin dq-btn-big({ text, type })
-  button.dq-btn-big(class=type)=text
-
-mixin dq-controls({})
-  .dq-controls
-    +dq-label({ text: "00:46", color: "blue" })
-    .dq-controls__text Does the photo match?
-    .dq-controls__btns
-      +dq-btn-big({ text: "YES", type: "accept" })
-      +dq-btn-big({ text: "NO", type: "reject" })
+mixin dq-controls({ type })
+  if (type === 1 || !type)
+    .dq-controls
+      +dq-label({ text: "00:46", color: "blue" })
+      .dq-controls__text Does the photo match?
+      .dq-controls__btns
+        +dq-btn-big({ text: "YES", type: "accept" })
+        +dq-btn-big({ text: "NO", type: "reject" })
+  if type === 2
+    .dq-controls
+      +dq-label({ text: "00:46", color: "blue" })
+      .dq-controls__text Barcode rejected?
+      .dq-controls__btns
+        +dq-dialog({})
+        +dq-btn-big({ text: "YES, ALLOW WITHOUT SCANNING", type: "accept", isDisabled: true })
+        +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject", isDisabled: true })
+  if type === 3
+    .dq-controls
+      +dq-label({ text: "00:46", color: "blue" })
+      .dq-controls__text Barcode rejected?
+      .dq-controls__btns
+        +dq-dialog-input({ iputText: "yes" })
+        +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject" })
+  if type === 4
+    .dq-controls
+      +dq-label({ text: "00:46", color: "blue" })
+      .dq-controls__text Barcode rejected?
+      .dq-controls__btns
+        +dq-dialog-input({ isError: true, iputText: "yep" })
+        +dq-btn-big({ text: "NO, CANCEL THE REQUEST", type: "reject" })

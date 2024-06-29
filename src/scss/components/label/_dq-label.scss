@@ -9,4 +9,9 @@
   color: $color-signal-blue;
   background-color: $color-periwinkle-2;
   border-radius: 30px;
+  &.darkblue {
+    font-weight: 700;
+    color: $color-white;
+    background-color: $color-signal-blue;
+  }
 }

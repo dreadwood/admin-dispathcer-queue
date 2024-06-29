@@ -16,7 +16,7 @@
   text-decoration: none;
   background-color: $color-cornflower-blue;
   border: 0;
-  border-radius: 9px;
+  border-radius: 8px;
   cursor: pointer;
   svg {
     display: block;
@@ -40,6 +40,20 @@
     background-color: $color-phantom-white;
     &:not([disabled]):hover {
       background-color: color.adjust($color-phantom-white, $blackness: 10%);
+    }
+  }
+  &.red {
+    color: $color-white;
+    background-color: $color-radical-red;
+    &:not([disabled]):hover {
+      background-color: color.adjust($color-radical-red, $blackness: 10%);
+    }
+  }
+  &.green {
+    color: $color-white;
+    background-color: $color-lime-green;
+    &:not([disabled]):hover {
+      background-color: color.adjust($color-lime-green, $blackness: 10%);
     }
   }
 }

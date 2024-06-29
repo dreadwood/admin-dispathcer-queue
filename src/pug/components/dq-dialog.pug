@@ -1,0 +1,8 @@
+include /components/button/dq-btn-icon
+
+mixin dq-dialog({})
+  .dq-dialog
+    | Does this package apply to this patient?
+    .dq-dialog__controls
+      +dq-btn-icon({ text: "No", color: "red" })
+      +dq-btn-icon({ text: "Yes", color: "green" })

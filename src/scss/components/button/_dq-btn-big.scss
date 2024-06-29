@@ -19,7 +19,7 @@
   cursor: pointer;
   &[disabled] {
     cursor: default;
-    opacity: 0.8;
+    opacity: 0.2;
   }
   &.accept {
     background-color: $color-lime-green;

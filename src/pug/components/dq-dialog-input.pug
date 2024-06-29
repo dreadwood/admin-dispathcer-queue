@@ -1,0 +1,12 @@
+include /elements/images
+
+mixin dq-dialog-input({ isError, isDisabled, iputText })
+  .dq-dialog-input(class=isError && "error")
+    .dq-dialog-input__content
+      | Write "Yes" and click the "Submit" button (or Enter)
+      form.dq-dialog-input__form
+        input.dq-dialog-input__field(placeholder="Yes" value=iputText)
+        button.dq-dialog-input__btn(type="submit" disabled=isDisabled || isError)
+          +svg({ name: "icon-check", width: 16, height: 16 })
+          | Send
+    .dq-dialog-input__error Wrong message

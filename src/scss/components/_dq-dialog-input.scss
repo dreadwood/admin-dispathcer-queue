@@ -1,0 +1,94 @@
+.dq-dialog-input {
+  width: 298px;
+  margin: 0;
+  overflow: hidden;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-white;
+  text-transform: none;
+  text-decoration: none;
+  background-color: $color-lime-green;
+  border: 0;
+  border-radius: 16px;
+  &.error {
+    .dq-dialog-input__error {
+      display: block;
+    }
+    .dq-dialog-input__field {
+      color: $color-radical-red;
+    }
+  }
+}
+.dq-dialog-input__content {
+  display: grid;
+  place-items: center;
+  height: 122px;
+  padding: 14px;
+}
+.dq-dialog-input__form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.dq-dialog-input__field {
+  display: block;
+  width: 80px;
+  padding: 7px 13px;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  color: $color-signal-blue;
+  background-color: $color-white;
+  border: 1px solid transparentize($color-signal-blue, 0.9);
+  border-radius: 20px;
+  outline: none;
+  appearance: none;
+  &::placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    color: transparentize($color-signal-blue, 0.8);
+  }
+
+}
+.dq-dialog-input__btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  padding: 8px 20px;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-indian-green;
+  border: 0;
+  border-radius: 23px;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    fill: currentcolor;
+  }
+  &[disabled] {
+    cursor: default;
+    opacity: 0.2;
+  }
+}
+.dq-dialog-input__error {
+  display: none;
+  padding: 5px 20px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: $color-cardinal;
+}
