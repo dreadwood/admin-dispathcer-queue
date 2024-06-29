@@ -1,0 +1,52 @@
+.dq-btn-play {
+  @include transition(background-color);
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: $font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-white;
+  text-decoration: none;
+  background-color: $color-cornflower-blue;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    fill: currentcolor;
+  }
+  &[disabled] {
+    opacity: 0.8;
+  }
+  &:not([disabled]):hover {
+    background-color: color.adjust($color-cornflower-blue, $blackness: 10%);
+  }
+  &.play {
+    svg:last-child {
+      display: none;
+    }
+    &.playing {
+      svg:first-child {
+        display: none;
+      }
+      svg:last-child {
+        display: block;
+      }
+    }
+
+  }
+  &.stop {
+    background-color: $color-radical-red;
+    &:not([disabled]):hover {
+      background-color: color.adjust($color-radical-red, $blackness: 10%);
+    }
+  }
+}

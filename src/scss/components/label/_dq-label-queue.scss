@@ -1,0 +1,114 @@
+.dq-label-queue {
+  display: grid;
+  gap: 4px 6px;
+  padding: 10px;
+  font-family: $font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $color-signal-blue;
+  white-space: nowrap;
+  background-color: $color-phantom-white;
+  border-radius: 4px;
+  svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+  }
+}
+.dq-label-queue__title {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  overflow: hidden;
+  font-weight: 700;
+  text-transform: uppercase;
+  svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+  }
+  span {
+    @include text-truncate;
+  }
+}
+.dq-label-queue__time {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  .dq-label-queue__label {
+    font-weight: 700;
+  }
+}
+.dq-label-queue__label {
+  display: block;
+  padding: 0 6px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: $color-white;
+  text-transform: none;
+  background-color: $color-cornflower-blue;
+  border-radius: 30px;
+  &.yellow {
+    color: $color-white;
+    background-color: $color-bright-orange-yellow;
+  }
+  &.pink {
+    color: $color-radical-red;
+    background-color: $color-pale-pink;
+  }
+  &.red {
+    color: $color-white;
+    background-color: $color-radical-red;
+  }
+  &.blue {
+    color: $color-white;
+    background-color: $color-cornflower-blue;
+  }
+  &.gray {
+    color: $color-signal-blue;
+    background-color: $color-platinum;
+  }
+}
+.dq-label-queue__order {
+  display: flex;
+  column-gap: 10px;
+  overflow: hidden;
+  font-weight: 600;
+  opacity: 0.6;
+  span:last-child {
+    @include text-truncate;
+  }
+}
+.dq-label-queue__person {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: $font-default;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  text-align: left;
+  color: $color-cornflower-blue;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  svg {
+    flex-shrink: 0;
+    fill: currentcolor;
+  }
+  span {
+    @include text-truncate;
+  }
+}

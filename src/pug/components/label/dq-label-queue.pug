@@ -1,0 +1,25 @@
+include /elements/images
+
+mixin dq-label-queue({ title, icon, time, timeColor, call })
+  .dq-label-queue
+    .dq-label-queue__title
+      +svg({ name: icon, width: 14, height: 14 })
+      span=title
+    .dq-label-queue__time
+      | 01:54:48
+      .dq-label-queue__label(class=timeColor) #{time} min ago
+    .dq-label-queue__order
+      span #19245347
+      span BROOKLYN-2
+    button.dq-label-queue__person
+      +svg({ name: "icon-label-car", width: 12, height: 12 })
+      span Akhtamov Umid
+      +svg({ name: "icon-clipboard", width: 14, height: 14 })
+    if call
+      button.dq-label-queue__person
+        +svg({ name: "icon-label-headphones", width: 12, height: 12 })
+        span Isabella Isabella
+        .dq-label-queue__label(
+          class=(call === "long" && "pink")
+          class=(call === "short" && "gray")
+        )=(call === "long" ? "4 min" : "20 sec")

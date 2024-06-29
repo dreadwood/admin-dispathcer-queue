@@ -1,0 +1,46 @@
+include /components/form/f-search
+include /components/label/dq-label-header
+
+-
+  const labelHeader = [
+    {
+      name: "wrong address: 2",
+      icon: "icon-label-house",
+      color: "yellow"
+    },
+    {
+      name: "not pres: 7",
+      icon: "icon-label-ban",
+      color: "pink"
+    },
+    {
+      name: "refuse: 4",
+      icon: "icon-label-cross",
+      color: "red"
+    },
+    {
+      name: "chat: 2",
+      icon: "icon-label-question",
+      color: "blue"
+    },
+    {
+      name: "qr: 3",
+      icon: "icon-label-qrcode",
+      color: "blue"
+    },
+    {
+      name: "geo: 2",
+      icon: "icon-label-geo",
+      color: "blue"
+    },
+  ]
+
+mixin header({})
+  header.account-page__header
+    h1.account-page__header-title Dispathcer queue
+    .account-page__header-labels
+      each it in labelHeader
+        - const { name, icon, color } = it
+        +dq-label-header({ name, icon, color })
+    form.account-page__search(action="#" role="search")
+      +f-search({})

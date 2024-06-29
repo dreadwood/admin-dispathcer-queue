@@ -1,0 +1,61 @@
+include /elements/images
+include /components/button/dq-btn-predictive
+
+mixin dq-chat-msg({ text, time, position, type })
+  .dq-chat__msg(class=position class=type)
+    if type === "driver"
+      .dq-chat__msg-label Driver comment
+    .dq-chat__msg-text=text
+    .dq-chat__msg-time=time
+
+mixin dq-chat({})
+  -
+    const chatMsgs = [
+      {
+        type: "driver",
+        text: "The patient did not provide a login code",
+        time: "10:26:01",
+        position: "left"
+      },
+      {
+        type: "outgoing",
+        text: "Stand by, please, I'll contact the patient.",
+        time: "10:25:37",
+        position: "right"
+      },
+      {
+        type: "incoming",
+        text: "Ok. Thank u",
+        time: "10:26:01",
+        position: "left"
+      },
+    ]
+    const chatPredictive = [
+      "Already solving the problem, please wait",
+      " I'm waiting to hear back from the pharmacy.",
+      "I'll call the patient now, please hold.",
+    ]
+  .dq-chat
+    .dq-chat__title Chat with the driver
+    .dq-chat__container
+      .dq-chat__top
+        a.dq-chat__person(href="#")
+          img(src="/img/placeholder-driver.jpg" width="38" height="38" alt="")
+          span Akhtamov Umid
+        button.dq-chat__btn-call
+          +svg({ name: "icon-chat-phone", width: 22, height: 22 })
+      .dq-chat__content-wrp
+        .dq-chat__content
+          .dq-chat__msg-list
+            each it in chatMsgs
+              +dq-chat-msg(it)
+          .dq-chat__predictive
+            each it in chatPredictive
+              +dq-btn-predictive({ text: it })
+      form.dq-chat__field
+        button.dq-chat__btn-clip(type="button")
+          +svg({ name: "icon-chat-clip", width: 20, height: 20 })
+        textarea.dq-chat__input(placeholder="Write a message")
+        button.dq-chat__btn-send(type="button" disabled)
+          +svg({ name: "icon-chat-send", width: 22, height: 22 })
+

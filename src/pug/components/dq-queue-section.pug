@@ -1,0 +1,60 @@
+include /components/label/dq-label-queue-small
+include /components/label/dq-label-queue
+
+mixin dq-queue-section({})
+  -
+    const queueInfo = [
+      { icon: "icon-label-qrcode", num: 3, color: "blue" },
+      { icon: "icon-label-house", num: 2, color: "yellow" },
+      { icon: "icon-label-ban", num: 7, color: "pink" },
+      { icon: "icon-label-question", num: 2, color: "blue" },
+      { icon: "icon-label-cross", num: 4, color: "red" },
+      { icon: "icon-label-geo", num: 12, color: "blue" },
+      { icon: "icon-label-snowflake", num: 7, color: "lightblue" },
+      { icon: "icon-label-photo", num: 19, color: "blue" },
+    ]
+    const queueItem = [
+      {
+        title: "Barcode rejected",
+        icon: "icon-label-qrcode",
+        time: 5,
+        timeColor: "red",
+        call: "long"
+      },
+      {
+        title: "Wrong geoposition",
+        icon: "icon-label-geo",
+        time: 3,
+        timeColor: 'yellow',
+        call: "short"
+      },
+      {
+        title: "An unusual problem",
+        icon: "icon-label-question",
+        time: 3,
+        timeColor: 'yellow'
+      },
+      {
+        title: "An unusual problem",
+        icon: "icon-label-question",
+        time: 1,
+        timeColor: 'blue'
+      },
+    ]
+  .dq-queue-section
+    .dq-queue-section__title Requests in the queue 37:
+    .dq-queue-section__info
+      each it in queueInfo
+        - const { icon, num, color } = it
+        +dq-label-queue-small({ icon, num, color })
+    .dq-queue-section__list
+      +dq-label-queue(queueItem[0])
+      +dq-label-queue(queueItem[1])
+      +dq-label-queue(queueItem[2])
+      +dq-label-queue(queueItem[1])
+      +dq-label-queue(queueItem[2])
+      +dq-label-queue(queueItem[3])
+      +dq-label-queue(queueItem[3])
+      +dq-label-queue(queueItem[3])
+      +dq-label-queue(queueItem[3])
+

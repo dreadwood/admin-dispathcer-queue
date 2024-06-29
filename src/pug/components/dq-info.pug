@@ -1,0 +1,163 @@
+include /elements/images
+include /components/button/dq-btn-icon
+include /components/dq-legend
+
+mixin dq-info-param({ text })
+  .dq-info__param
+    =text
+    +svg({ name: "icon-clipboard", width: 18, height: 18 })
+
+
+mixin dq-info-drive({})
+  .dq-info__drive.dq-info__field
+    .dq-info__drive
+      .dq-info__person
+        img(src="/img/placeholder-driver.jpg" width="38" height="38" alt="")
+        .dq-info__person-label
+          +svg({ name: "icon-raiting-star", width: 12, height: 12 })
+          | 4.8
+      .dq-info__drive-data
+        .dq-info__drive-count Hired: #[b 87d]
+        .dq-info__label Driver:
+        button.dq-info__drive-name
+          | Akhtamov Umid
+          +svg({ name: "icon-clipboard", width: 16, height: 16 })
+        button.dq-info__number
+          | 219224680
+          +svg({ name: "icon-clipboard", width: 16, height: 16 })
+      .dq-info__drive-contols
+        +dq-btn-icon({ text: "Call the driver", icon: "icon-chat-phone", color: "blue" })
+        +dq-btn-icon({ text: "@paulth", icon: "icon-telegram", color: "gray" })
+
+
+mixin dq-info-client-btn({ text, icon, isBtn, classname })
+  if isBtn
+    button.dq-info__client-btn(class=classname)
+      if icon
+        +svg({ name: icon, width: 16, height: 16 })
+      =text
+      +svg({ name: "icon-clipboard", width: 16, height: 16 })
+  else
+    a.dq-info__client-btn(class=classname href="#")
+      if icon
+        +svg({ name: icon, width: 16, height: 16 })
+      =text
+      +svg({ name: "icon-clipboard", width: 16, height: 16 })
+
+
+mixin dq-info-client({})
+  .dq-info__client.dq-info__field
+    .dq-info__title Client info
+    .dq-info__client-grid
+      .dq-info__client-block
+        .dq-info__label Client:
+        | Your pharmacy name Name
+      .dq-info__client-block
+        .dq-info__label  
+        | Reg: #[b 1749d]
+        +dq-info-client-btn({ text: "219224680", isBtn: true })
+      .dq-info__client-block
+        .dq-info__label Pharmacy Address:
+        +dq-info-client-btn({ text: "123 Main St. New York NY 10001" })
+      .dq-info__client-block
+        .dq-info__label Pharmacy Phone:
+        +dq-info-client-btn({ text: "+12345678901", icon: "icon-chat-phone" })
+      .dq-info__client-block
+        .dq-info__client-warning If Not Present:
+        +dq-info-client-btn({ text: "+12345678901", classname: "underline" })
+      .dq-info__client-block
+        .dq-info__client-warning If Wrong Address:
+        +dq-info-client-btn({ text: "+12345678901", classname: "underline" })
+      .dq-info__client-block
+        .dq-info__client-warning If Rescheduled:
+        +dq-info-client-btn({ text: "+12345678901", classname: "underline" })
+      .dq-info__client-block
+        .dq-info__client-warning If Refused:
+        +dq-info-client-btn({ text: "+12345678901", classname: "underline" })
+    .dq-info__client-descr
+      .dq-info__client-warning Instructions for Dispatch:
+      div Must call pharmacy if pt is not home, wrong address, refuse, reschedule. The pharmacy closes at 6 pm, please, create a ticket for any problems after 6 pm so Amina/Laziz/Alex can email the pharmacy. CALL the pharmacy after 6 pm at their after-hours line #[a(href="#") 877-698-2330] and press option 3 or #[a(href="#") 646-754-7921] ONLY WHEN WORNG ADDRESS and create a ticket. Do NOT call the pharmacy after 6 pm for ANY OTHER ISSUES. If FRIDGE item do not reschedule call pharmacy first. All fridge items are good only for 24h after it was picked originally from the pharmacy.
+
+
+mixin dq-info-delivery({})
+  .dq-info__delivery.dq-info__field
+    .dq-info__title Delivery details
+    div
+      .dq-info__label Delivery method:
+      .dq-info__delivery-important
+        .dq-info__delivery-warning No-contact Delivery
+        | Do NOT attempt face-to-face delivery, Leave package at door and snap a photo.
+    div
+      .dq-info__label Type:
+      button.dq-info__btn-time
+        +svg({ name: "icon-time-check", width: 16, height: 16 })
+        ="Next day special time window"
+    .dq-info__delivery-cols
+      .dq-info__delivery-field
+        .dq-info__label Created:
+        | 06:45 PM 01/01/2023
+      .dq-info__delivery-field
+        .dq-info__label ETA:
+        | 11:01 AM - 02:01 PM 01/01/2023
+    div
+      .dq-info__label Special instruction:
+      .dq-info__delivery-uppermaps APT 1, CALL PT, RING BELL, LEAVE BEHIND PLANTS  ON PORCH IF NA
+    .dq-info__map
+      img(src="/img/map-person.jpg" width="329" height="219" alt="")
+      .dq-info__map-legend
+        +dq-legend({})
+
+
+mixin dq-info-contact-btn({ text })
+  .dq-info__contact-btn
+    =text
+    +svg({ name: "icon-clipboard", width: 16, height: 16 })
+
+mixin dq-info-contact({})
+  .dq-info__contact.dq-info__field
+    .dq-info__title Patient info
+    div
+      .dq-info__label Name:
+      | Antidio Lopez
+    div
+      .dq-info__label Address:
+      +dq-info-contact-btn({ text: "17 Lincoln ave, Roslyn Heights, NY, 11577" })
+    div
+      .dq-info__label Phones:
+      .dq-info__contact-list
+        +dq-info-contact-btn({ text: "+13472566999" })
+        +dq-info-contact-btn({ text: "+13472566999" })
+        +dq-info-contact-btn({ text: "+13472566999" })
+
+
+mixin dq-info-package-item({ text, icon })
+  .dq-info__package-item
+    +svg({ name: icon, width: 16, height: 16 })
+    =text
+
+mixin dq-info-package({})
+  .dq-info__package.dq-info__field
+    .dq-info__title Package info
+    .dq-info__package-col
+      .dq-info__label Items: #[span.dq-info__package-num 1]
+      .dq-info__label Rate: #[span.dq-info__package-price $10]
+    .dq-info__label Subtype:
+    .dq-info__package-list
+      +dq-info-package-item({ text: "Keep in Fridge", icon: "icon-label-snowflake" })
+      +dq-info-package-item({ text: "Confidential", icon: "icon-label-invisible" })
+      +dq-info-package-item({ text: "Sensitive", icon: "icon-label-feather" })
+
+
+mixin dq-info({ isSmall })
+  .dq-info
+    .dq-info__top
+      +dq-info-param({ text: "#19245347" })
+      +dq-info-param({ text: "BROOKLYN-2" })
+    +dq-info-drive({})
+    +dq-info-client({})
+    if !isSmall
+      .dq-info__bottom
+        +dq-info-delivery({})
+        .dq-info__bottom-rows
+          +dq-info-contact({})
+          +dq-info-package({})

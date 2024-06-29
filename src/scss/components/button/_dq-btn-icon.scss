@@ -1,0 +1,45 @@
+.dq-btn-icon {
+  @include transition(background-color, opacity);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: $font-default;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-white;
+  text-decoration: none;
+  background-color: $color-cornflower-blue;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  svg {
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    fill: currentcolor;
+  }
+  &[disabled] {
+    opacity: 0.8;
+  }
+  &:not([disabled]):hover {
+    background-color: color.adjust($color-cornflower-blue, $blackness: 10%);
+  }
+  &.blue {
+    color: $color-white;
+    background-color: $color-cornflower-blue;
+  }
+  &.gray {
+    color: $color-signal-blue;
+    background-color: $color-phantom-white;
+    &:not([disabled]):hover {
+      background-color: color.adjust($color-phantom-white, $blackness: 10%);
+    }
+  }
+}

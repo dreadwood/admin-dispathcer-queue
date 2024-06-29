@@ -1,0 +1,6 @@
+include /elements/images
+
+mixin dq-label-queue-small({ icon, num, color })
+  .dq-label-queue-small(class=color)
+    +svg({ name: icon, width: 14, height: 14 })
+    =num

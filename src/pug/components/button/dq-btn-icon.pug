@@ -1,0 +1,10 @@
+include /elements/images
+
+mixin dq-btn-icon({ text, icon, color, isDisabled })
+  button.dq-btn-icon(
+    class=color
+    disabled=(isDisabled ? true : false)
+  )
+    if icon
+      +svg({ name: icon, width: 18, height: 18 })
+    =text

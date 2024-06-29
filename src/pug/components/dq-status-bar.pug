@@ -1,0 +1,10 @@
+include /elements/images
+include /components/button/dq-btn-play
+
+mixin dq-status-bar({})
+  .dq-status-bar
+    span Total requests from drivers today: 264
+    span Time to workout: 45 min 34 sec
+    .dq-status-bar__controls
+      +dq-btn-play({ text: "End", type: "stop" })
+      +dq-btn-play({ text: "Pause", type: "play", isActive: true })

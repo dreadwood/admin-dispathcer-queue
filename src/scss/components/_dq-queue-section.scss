@@ -1,0 +1,27 @@
+.dq-queue-section {
+  width: 232px; // TODO: 2024-06-28 / needed?
+}
+.dq-queue-section__title {
+  @include text-truncate;
+  margin: 0;
+  overflow: hidden;
+  font-family: $font-default;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $color-signal-blue;
+  text-transform: uppercase;
+}
+.dq-queue-section__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+}
+.dq-queue-section__list {
+  display: grid;
+  row-gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}

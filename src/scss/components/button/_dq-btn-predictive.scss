@@ -1,0 +1,25 @@
+.dq-btn-predictive {
+  @include transition(background-color);
+  display: block;
+  width: max-content;
+  margin: 0;
+  padding: 9px 19px;
+  font-family: $font-default;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+  text-align: center;
+  color: $color-signal-blue;
+  text-decoration: none;
+  background-color: $color-phantom-white;
+  border: 1px solid transparentize($color-signal-blue, 0.85);;
+  border-radius: 37px;
+  cursor: pointer;
+  &:disabled {
+    color: transparentize($color-signal-blue, 0.4);
+    cursor: default;
+  }
+  &:not(:disabled):hover {
+    background-color: color.adjust($color-phantom-white, $blackness: 5%)
+  }
+}

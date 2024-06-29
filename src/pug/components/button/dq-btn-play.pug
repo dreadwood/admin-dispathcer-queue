@@ -1,0 +1,15 @@
+include /elements/images
+
+mixin dq-btn-play({ text, type, isActive, isDisabled })
+  button.dq-btn-play(
+    class=type
+    class=(isActive && "playing")
+    disabled=(isDisabled ? true : false)
+    onClick=(type === "play" && "this.classList.toggle('playing')")
+  )
+    if type === "stop"
+      +svg({ name: "icon-stop", width: 18, height: 18 })
+    if type === "play"
+      +svg({ name: "icon-play", width: 18, height: 18 })
+      +svg({ name: "icon-pause", width: 18, height: 18 })
+    =text

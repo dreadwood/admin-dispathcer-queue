@@ -1,0 +1,22 @@
+include /elements/head
+include /components/header
+
+- let title = "Rx2Go: Dispathcer queue"
+- let pageScrollLock = false
+
+block data
+
+doctype html
+html(lang="en")
+  +head({ title })
+  body(class=pageScrollLock && "pf-scroll-lock")
+    section.account-page
+      .account-page__left
+        a.account-page__logo(href="#")
+          +svg({ name: "/img/logo-rx2go.svg", width: 97, height: 25 })
+      .account-page__right
+        +header({})
+        .account-page__content
+          .dq-page
+            block content
+    include /elements/script
