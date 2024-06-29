@@ -1,5 +1,7 @@
 .dq-chat {
-  width: 420px; // TODO: 2024-06-29 / in needed?
+  display: grid;
+  align-content: start;
+  width: 420px;
   padding: 16px;
   overflow: hidden;
   font-family: $font-default;
@@ -68,13 +70,14 @@
 }
 .dq-chat__content-wrp {
   @include hide-scroll;
-  height: 150px; // TODO: 2024-06-29 / needed?
+  height: 549px;
   overflow: scroll;
 }
 .dq-chat__content {
   display: grid;
   align-content: end;
   align-items: end;
+  height: 100%;
   padding: 14px;
   background-color: $color-white;
 }

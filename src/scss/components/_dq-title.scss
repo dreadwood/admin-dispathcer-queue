@@ -1,0 +1,11 @@
+.dq-title {
+  font-family: $font-default;
+  font-size: 33px;
+  line-height: 43px;
+  font-weight: 700;
+  color: $color-signal-blue;
+  text-transform: uppercase;
+  span {
+    color: $color-cornflower-blue;
+  }
+}

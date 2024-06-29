@@ -9,17 +9,22 @@
 @import "label/dq-label-header";
 @import "label/dq-label-queue-small";
 @import "label/dq-label-queue";
+@import "label/dq-label";
 
 // button
+@import "button/dq-btn-big";
 @import "button/dq-btn-icon";
 @import "button/dq-btn-play";
 @import "button/dq-btn-predictive";
 
 // common
 @import "dq-chat";
+@import "dq-controls";
 @import "dq-info";
 @import "dq-legend";
 @import "dq-status-bar";
+@import "dq-status";
+@import "dq-title";
 @import "dq-queue-section";
 
 

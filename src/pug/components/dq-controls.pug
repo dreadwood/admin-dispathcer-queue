@@ -1,0 +1,13 @@
+mixin dq-label({ text, color })
+  .dq-label(class=color)=text
+
+mixin dq-btn-big({ text, type })
+  button.dq-btn-big(class=type)=text
+
+mixin dq-controls({})
+  .dq-controls
+    +dq-label({ text: "00:46", color: "blue" })
+    .dq-controls__text Does the photo match?
+    .dq-controls__btns
+      +dq-btn-big({ text: "YES", type: "accept" })
+      +dq-btn-big({ text: "NO", type: "reject" })

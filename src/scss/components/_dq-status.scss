@@ -1,0 +1,19 @@
+.dq-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: $font-default;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  color: transparentize($color-signal-blue, 0.4);
+}
+.dq-status__label {
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $color-white;
+  background-color: $color-radical-red;
+  border-radius: 30px;
+}

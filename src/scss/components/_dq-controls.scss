@@ -1,0 +1,21 @@
+.dq-controls {
+  display: grid;
+  place-items: start center;
+  place-content: start center;
+  gap: 21px;
+  height: 700px;
+  padding: 36px;
+  font-family: $font-default;
+  font-size: 33px;
+  line-height: 43px;
+  font-weight: 700;
+  text-align: center;
+  color: $color-signal-blue;
+  text-transform: uppercase;
+  background-color: $color-phantom-white;
+  border-radius: 16px;
+}
+.dq-controls__btns {
+  display: grid;
+  gap: 21px;
+}

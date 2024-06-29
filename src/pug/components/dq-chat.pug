@@ -8,9 +8,24 @@ mixin dq-chat-msg({ text, time, position, type })
     .dq-chat__msg-text=text
     .dq-chat__msg-time=time
 
-mixin dq-chat({})
+mixin dq-chat({ isPredictive, isDriverMsg })
   -
-    const chatMsgs = [
+    const chatMsgs1 = [
+      {
+        type: "outgoing",
+        text: "Hello! Have you done a good code quality check?",
+        time: "10:25:37",
+        position: "right"
+      },
+      {
+        type: "incoming",
+        text: "Yes. It doesn't work.",
+        time: "10:26:01",
+        position: "left"
+      },
+    ]
+  -
+    const chatMsgs2 = [
       {
         type: "driver",
         text: "The patient did not provide a login code",
@@ -47,11 +62,12 @@ mixin dq-chat({})
       .dq-chat__content-wrp
         .dq-chat__content
           .dq-chat__msg-list
-            each it in chatMsgs
+            each it in (isDriverMsg ? chatMsgs2 : chatMsgs1)
               +dq-chat-msg(it)
-          .dq-chat__predictive
-            each it in chatPredictive
-              +dq-btn-predictive({ text: it })
+          if isPredictive
+            .dq-chat__predictive
+              each it in chatPredictive
+                +dq-btn-predictive({ text: it })
       form.dq-chat__field
         button.dq-chat__btn-clip(type="button")
           +svg({ name: "icon-chat-clip", width: 20, height: 20 })
