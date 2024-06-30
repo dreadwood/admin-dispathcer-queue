@@ -86,6 +86,10 @@
   gap: 9px;
 }
 .dq-chat__msg {
+  --text-color: #{$color-signal-blue};
+  --time-color: #{transparentize($color-signal-blue, 0.4)};
+  --bg-color: #{$color-smoky-white};
+  position: relative;
   display: grid;
   gap: 2px;
   width: max-content;
@@ -94,29 +98,44 @@
   font-size: 16px;
   line-height: 21px;
   font-weight: 500;
-  color: $color-signal-blue;
-  background-color: $color-smoky-white;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   border-radius: 8px;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: -2px;
+    z-index: 1;
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 5px 10px 5px 0;
+    border-style: solid;
+    border-color: transparent var(--bg-color) transparent transparent;
+    transform: rotate(-50deg);
+  }
   &.right {
     justify-self: end;
+    &::before {
+      right: -2px;
+      left: auto;
+      transform: rotate(-130deg);
+    }
     .dq-chat__msg-time {
       text-align: right;
     }
   }
   &.outgoing {
-    color: $color-white;
-    .dq-chat__msg-time {
-      color: transparentize($color-white, 0.4);
-    }
-    background-color: $color-cornflower-blue
+    --text-color: #{$color-white};
+    --time-color: #{transparentize($color-white, 0.4)};
+    --bg-color: #{$color-cornflower-blue};
   }
   // &.incoming {}
   &.driver {
-    color: $color-signal-blue;
-    background-color: $color-light-mallow;
-    .dq-chat__msg-time {
-      color: transparentize($color-signal-blue, 0.4);
-    }
+    --text-color: #{$color-signal-blue};
+    --time-color: #{transparentize($color-signal-blue, 0.4)};
+    --bg-color: #{$color-light-mallow};
   }
 }
 .dq-chat__msg-label {
@@ -138,7 +157,7 @@
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
-  color: transparentize($color-signal-blue, 0.4);
+  color: var(--time-color);
 }
 .dq-chat__predictive {
   display: grid;
