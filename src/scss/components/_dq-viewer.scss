@@ -1,0 +1,150 @@
+.dq-viewer {
+  position: fixed;
+  z-index: 10;
+  padding: 50px 60px;
+  overflow: scroll;
+  font-family: $font-default;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $color-white;
+  background-color: transparentize($color-black, 0.1);
+  inset: 0;
+}
+.dq-viewer__zoom {
+  position: absolute;
+  top: 210px;
+  right: 60px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.dq-viewer__btn-zoom {
+  @include transition(background-color);
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  color: $color-white;
+  background-color: transparentize($color-black, 0.8);
+  border: 0;
+  cursor: pointer;
+  &[disabled] {
+    color: transparentize($color-white, 0.8);
+    background-color: transparentize($color-black, 0.5);
+  }
+  svg {
+    fill: currentcolor;
+  }
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
+    background-color: transparentize($color-white, 0.7);
+  }
+}
+.dq-viewer__btn-close,
+.dq-viewer__btn-next,
+.dq-viewer__btn-prev {
+  @include transition(background-color);
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  color: $color-white;
+  background-color: transparentize($color-white, 0.9);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  svg {
+    fill: currentcolor;
+  }
+  &:hover,
+  &:focus {
+    background-color: transparentize($color-white, 0.8);
+  }
+}
+.dq-viewer__btn-close {
+  position: absolute;
+  top: 50px;
+  right: 60px;
+}
+.dq-viewer__btn-next {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+}
+.dq-viewer__btn-prev {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+}
+.dq-viewer__descr {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  max-width: 500px;
+}
+.dq-viewer__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 500;
+}
+.dq-viewer__text {
+  margin-top: 10px;
+}
+.dq-viewer__info {
+  margin-top: 60px;
+}
+.dq-viewer__label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  color: transparentize($color-white, 0.4);
+}
+.dq-viewer__content {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 780px;
+  transform: translate(-50%, 0%);
+}
+.dq-viewer__photo {
+  width: 780px;
+  height: 1050px;
+  img {
+    object-fit: contain;
+  }
+}
+.dq-viewer__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+}
+.dq-viewer__preview {
+  @include transition(border-color);
+  position: relative;
+  width: 128px;
+  height: 174px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &.actv {
+    border-color: $color-white;
+    cursor: default;
+  }
+}

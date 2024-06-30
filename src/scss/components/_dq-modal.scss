@@ -1,18 +1,19 @@
-.pf-modal {
+.dq-modal {
   position: relative;
-  padding: 24px 24px 44px 24px;
+  width: 560px;
+  padding: 20px;
   background-color: $color-white;
-  border-radius: 30px;
+  border-radius: 16px;
 }
-.pf-modal-close {
+.dq-modal-close {
   @include transition(background-color);
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 20px;
+  right: 20px;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 33px;
+  height: 33px;
   margin: 0;
   padding: 0;
   color: $color-cornflower-blue;

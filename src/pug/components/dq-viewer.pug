@@ -1,0 +1,29 @@
+include /elements/images
+
+mixin dq-viewer({})
+  .dq-viewer
+    button.dq-viewer__btn-close
+      +svg({ name: "icon-cross", width: 26, height: 26 })
+    .dq-viewer__zoom
+      button.dq-viewer__btn-zoom
+        +svg({ name: "icon-plus", width: 28, height: 28 })
+      button.dq-viewer__btn-zoom(disabled)
+        +svg({ name: "icon-minus", width: 28, height: 28 })
+    button.dq-viewer__btn-next
+      +svg({ name: "icon-arrow-right", width: 28, height: 28 })
+    button.dq-viewer__btn-prev
+      +svg({ name: "icon-arrow-left", width: 28, height: 28 })
+    .dq-viewer__descr
+      .dq-viewer__title Antidio Lopez
+      .dq-viewer__text 17 Lincoln ave, Roslyn Heights, NY, 11577
+      .dq-viewer__text Pharmacy Name
+      .dq-viewer__info
+        .dq-viewer__label Driver's location:
+        | 17 Lincoln ave, Roslyn Heights, NY, 11577
+    .dq-viewer__content
+      .dq-viewer__photo
+        img(src="/img/placeholder-build.jpg" width="780" height="1050" alt="")
+      .dq-viewer__list
+        each it, i in (new Array(3).fill(0))
+          button.dq-viewer__preview(class=(i=== 0 && "actv") onclick="this.classList.toggle('actv')")
+            img(src="/img/placeholder-build.jpg" width="128" height="174" alt="")

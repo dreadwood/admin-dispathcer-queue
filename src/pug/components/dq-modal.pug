@@ -1,0 +1,41 @@
+include /elements/images
+include /components/button/dq-btn-predictive
+
+mixin dq-form-btn({ text, isDisabled, type, color })
+  button.dq-form__btn(
+    class=color
+    type=(type || "button")
+    disabled=isDisabled
+  )=text
+
+mixin dq-modal({ type })
+  .dq-overflow
+    .dq-modal
+      button.dq-modal-close
+        +svg({ name: "icon-cross", width: 16, height: 16 })
+      if (type === 1 || !type)
+        .dq-form
+          .dq-form__title The photo doesn't match
+          .dq-form__text Describe the reason why you want to cancel this request.
+          form.dq-form__form
+            textarea.dq-form__textarea(placeholder="Minimum 50 characters")
+            .dq-form__predictive
+              +dq-btn-predictive({ text: "Doesn't show the fridgebag" })
+              +dq-btn-predictive({ text: "Doesn't show the driver's ID" })
+              +dq-btn-predictive({ text: "Doesn't show your vest" })
+            .dq-form__controls
+              +dq-form-btn({ text: "Back" })
+              +dq-form-btn({ text: "Request anothger photo", type: "submit", color: "red" })
+      if type === 2
+        .dq-form
+          .dq-form__title Are you sure?
+          .dq-form__text Deliveri method "No contact Delivery". The driver should leave the parcel at the door.
+          .dq-form__poster
+            .dq-form__poster-img
+              img(src="/img/illustration-no-contact.png" width="103" height="89" alt="")
+            div
+              .dq-form__poster-title No-contact Delivery
+              .dq-form__poster-msg Do NOT attempt face-to-face delivery, Leave package at door and snap a photo.
+          .dq-form__controls
+            +dq-form-btn({ text: "Back" })
+            +dq-form-btn({ text: "Yes, I understand", color: "blue" })

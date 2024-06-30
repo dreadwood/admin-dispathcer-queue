@@ -1,0 +1,34 @@
+extends /elements/layout-page
+include /elements/images
+include /components/dq-status-bar
+include /components/dq-queue-section
+include /components/dq-chat
+include /components/dq-info
+include /components/dq-status
+include /components/dq-controls
+include /components/dq-view
+include /components/dq-modal
+
+block data
+  - title = "Rx2Go: Dispathcer queue — Modal"
+  - pageScrollLock = true
+
+block content
+  .dq-page__status-bar
+    +dq-status-bar({})
+  .dq-page__content
+    .dq-page__left
+      +dq-info({ isSmall: true })
+    .dq-page__right
+      .dq-page__title-wrp
+        .dq-title Confirm the driver's photo
+        .dq-page__status
+          +dq-status({})
+      .dq-page__grid
+        +dq-view({})
+        .dq-page__controls
+          +dq-controls({})
+        +dq-chat({})
+  .dq-page__queue
+    +dq-queue-section({})
+  +dq-modal({})

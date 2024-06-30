@@ -12,7 +12,7 @@
   color: $color-signal-blue;
   text-decoration: none;
   background-color: $color-phantom-white;
-  border: 1px solid transparentize($color-signal-blue, 0.85);;
+  border: 1px solid transparentize($color-signal-blue, 0.85);
   border-radius: 37px;
   cursor: pointer;
   &:disabled {

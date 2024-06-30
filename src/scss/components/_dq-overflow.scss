@@ -1,0 +1,10 @@
+.dq-overflow {
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 58px;
+  overflow: scroll;
+  background-color: transparentize($color-black, 0.6);
+  inset: 0;
+}
