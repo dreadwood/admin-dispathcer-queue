@@ -1,6 +1,6 @@
 # Admin dispathcer queuet
 
-<!-- **Опубликованная версия доступна [тут](https://dreadwood-rx4route.netlify.app/)** -->
+**Опубликованная версия доступна [тут](https://dreadwood-rx2go-admin-dq.netlify.app/)**
 
 ## Описание
 
