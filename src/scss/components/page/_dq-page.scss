@@ -3,7 +3,7 @@
   grid-template-columns: 1fr auto;
   align-content: start;
   gap: 16px;
-  width: 2320px;
+  // width: 2320px;
   min-height: 100%;
   padding: 16px;
   color: $color-signal-blue;
@@ -12,12 +12,14 @@
 .dq-page__status-bar {
   grid-column: 1 / 3;
 }
+.dq-page__wrp {
+  overflow: scroll;
+  border: 1px solid $color-grideperleft;
+  border-radius: 16px;
+}
 .dq-page__content {
   display: flex;
   align-items: flex-start;
-  overflow: hidden;
-  border: 1px solid $color-grideperleft;
-  border-radius: 16px;
 }
 .dq-page__left {
   flex-shrink: 0;

@@ -16,22 +16,23 @@ block data
 block content
   .dq-page__status-bar
     +dq-status-bar({})
-  .dq-page__content
-    .dq-page__left
-      +dq-info({ isSmall: true })
-    .dq-page__right
-      .dq-page__title-wrp
-        .dq-title An unusual problem
-        .dq-page__status
-          +dq-status({})
-      .dq-page__contact
-        +dq-label-contact({})
-      .dq-page__grid
-        .dq-page__controls
-          +dq-controls({ type: 5 })
-        +dq-chat({})
-        .dq-page__photos
-          +dq-photos({})
+  .dq-page__wrp
+    .dq-page__content
+      .dq-page__left
+        +dq-info({ isSmall: true })
+      .dq-page__right
+        .dq-page__title-wrp
+          .dq-title An unusual problem
+          .dq-page__status
+            +dq-status({})
+        .dq-page__contact
+          +dq-label-contact({})
+        .dq-page__grid
+          .dq-page__controls
+            +dq-controls({ type: 5 })
+          +dq-chat({})
+          .dq-page__photos
+            +dq-photos({})
   .dq-page__queue
     +dq-queue-section({})
 

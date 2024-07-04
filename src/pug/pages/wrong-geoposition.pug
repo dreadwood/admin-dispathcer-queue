@@ -16,27 +16,28 @@ block data
 block content
   .dq-page__status-bar
     +dq-status-bar({})
-  .dq-page__content
-    .dq-page__left
-      +dq-info({ isSmall: true })
-    .dq-page__right
-      .dq-page__title-wrp
-        .dq-title Confirm the driver's photo
-        .dq-page__status
-          +dq-status({})
-      .dq-page__grid.map
-        .dq-page__map
-          img(src="/img/map-location.jpg" width="525" height="700" alt="")
-          .dq-page__map-legend
-            +dq-legend({})
-          .dq-page__map-btn
-            +dq-btn-icon({ text: "Google Street View", icon: "icon-label-visible", color: "blackblue" })
-        +dq-view({ type: 2 })
-        .dq-page__controls
-          +dq-controls({ type: 6 })
-        +dq-chat({ isPredictive: true, isDriverMsg: true })
-        .dq-page__photos
-          +dq-photos({ type: 2 })
+  .dq-page__wrp
+    .dq-page__content
+      .dq-page__left
+        +dq-info({ isSmall: true })
+      .dq-page__right
+        .dq-page__title-wrp
+          .dq-title Confirm the driver's photo
+          .dq-page__status
+            +dq-status({})
+        .dq-page__grid.map
+          .dq-page__map
+            img(src="/img/map-location.jpg" width="525" height="700" alt="")
+            .dq-page__map-legend
+              +dq-legend({})
+            .dq-page__map-btn
+              +dq-btn-icon({ text: "Google Street View", icon: "icon-label-visible", color: "blackblue" })
+          +dq-view({ type: 2 })
+          .dq-page__controls
+            +dq-controls({ type: 6 })
+          +dq-chat({ isPredictive: true, isDriverMsg: true })
+          .dq-page__photos
+            +dq-photos({ type: 2 })
   .dq-page__queue
     +dq-queue-section({})
 

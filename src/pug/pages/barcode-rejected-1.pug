@@ -18,24 +18,25 @@ block data
 block content
   .dq-page__status-bar
     +dq-status-bar({})
-  .dq-page__content
-    .dq-page__left
-      +dq-info({})
-    .dq-page__right
-      .dq-page__title-wrp
-        .dq-title Barcode rejected
-        +dq-label({ text: "2 ITEM", color: "darkblue" })
-        .dq-page__status
-          +dq-status({})
-      .dq-page__contact
-        +dq-label-contact({})
-      .dq-page__grid
-        +dq-view({})
-        .dq-page__controls
-          +dq-controls({ type: 2 })
-        +dq-chat({})
-        .dq-page__photos
-          +dq-photos({})
+  .dq-page__wrp
+    .dq-page__content
+      .dq-page__left
+        +dq-info({})
+      .dq-page__right
+        .dq-page__title-wrp
+          .dq-title Barcode rejected
+          +dq-label({ text: "2 ITEM", color: "darkblue" })
+          .dq-page__status
+            +dq-status({})
+        .dq-page__contact
+          +dq-label-contact({})
+        .dq-page__grid
+          +dq-view({})
+          .dq-page__controls
+            +dq-controls({ type: 2 })
+          +dq-chat({})
+          .dq-page__photos
+            +dq-photos({})
   .dq-page__queue
     +dq-queue-section({})
 
