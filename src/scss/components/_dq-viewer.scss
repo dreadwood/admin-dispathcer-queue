@@ -84,7 +84,8 @@
   position: absolute;
   top: 50px;
   left: 60px;
-  max-width: 500px;
+  z-index: 2;
+  max-width: 600px;
 }
 .dq-viewer__title {
   font-size: 24px;
@@ -108,29 +109,32 @@
   position: absolute;
   top: 50px;
   left: 50%;
-  width: 780px;
+  width: 56vh;
   transform: translate(-50%, 0%);
 }
 .dq-viewer__photo {
-  width: 780px;
-  height: 1050px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
   }
 }
 .dq-viewer__list {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
+  gap: 2%;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 4%;
+  overflow: scroll;
 }
 .dq-viewer__preview {
   @include transition(border-color);
   position: relative;
-  width: 128px;
-  height: 174px;
+  flex-shrink: 0;
+  width: 16%;
+  aspect-ratio: 3 / 4;
   margin: 0;
   padding: 0;
   overflow: hidden;
